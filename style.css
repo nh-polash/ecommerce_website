@@ -1,0 +1,983 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	color: #000;
+	font-size: 18px;
+}
+
+h1, h2, h3, h4 {
+    color: #445280;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.btn-card {
+    background-color: #20AA6B;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 26px;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.btn-card:hover {
+    background-color: #fff;
+    color: #20aa68;
+    border: 1px solid #20aa68;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+}
+
+/* main css start here */
+
+/* hero-area css start here */
+header.section-header {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    top: 0;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.6);
+}
+
+header .hero-area {
+    background-color: #445268;
+}
+
+.logo img {
+    max-width: 134px;
+    margin: 15px 0;
+}
+
+.hero-search {
+    margin-top: 24px;
+    background-color: #20AA6B;
+    border: 2px solid #20AA6B;
+    border-radius: 5px;
+}
+
+.hero-search input {
+    color: rgba(0,0,0,.65) !important;
+    width: auto;
+}
+
+.hero-search button {
+    color: #fff !important;
+    width: 55px;
+}
+
+i.fas.fa-search {
+    font-size: small;
+}
+
+.login-cart-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.login-cart-area a.btn:focus {
+    box-shadow: none;
+}
+
+.login-area {
+    display: flex;
+    flex-direction: row;
+    margin-top: 16px;
+    background-color: #FFFFFF;
+    color: #9C9C9C;
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 2px solid #9C9C9C;
+    font-weight: 500;
+    width: 152px;
+    transition: 0.3s;
+}
+
+.login-icon i {
+    margin-right: 6px;
+}
+
+.login-area:hover {
+    border: 2px solid #20AA6B;
+    color: #20AA6B;
+}
+
+.cart-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 150px;
+    background-color: #20AA6B;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s;
+    margin-top: 16px;
+    padding: 0px 10px;
+    border: 2px solid #20AA6B;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.cart-area:hover {
+    background-color: #fff;
+    color: #20aa68;
+}
+
+.cart-title {
+    margin-left: 20px;
+}
+
+i.fas.fa-cart-plus {
+    font-size: 30px;
+}
+/* hero-area css end here */
+
+
+/* main-nav-area css end here */
+.navigation-menu {
+    background-color: #313D51;
+}
+
+.dropdown-btn {
+    width: 100%;
+    background-color: #20AA6B;
+    padding: 14px 15px;
+}
+
+.dropdown-btn span {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.dropdown-btn .categories {
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.dropdown-btn span:last-of-type {
+    float: right;
+    margin-right: 5px;
+    font-size: 25px;
+}
+
+nav.dropdown-nav {
+    position: relative;
+    transition: 0.5s;
+}
+
+nav .dropdown-nav-content {
+    position: absolute;
+    display: none;
+    z-index: 9999;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px 0;
+    transition: all 0.5s;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+nav.dropdown-nav:hover .dropdown-nav-content {
+    display: block;
+}
+
+.dropdown-nav-content ul li a .menu-item-text {
+    width: 200px;
+}
+
+.dropdown-nav-content ul li a .menu-item-text span {
+    color: #707070;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.dropdown-nav-content ul li {
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.dropdown-nav-content ul li:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown-nav-content ul li a .menu-item-icon-1 {
+    width: 35px;
+}
+
+.dropdown-nav-content ul li a .menu-item-icon-1 i {
+    color: #000;
+}
+
+.dropdown-nav-content ul li a .menu-item-icon-2 i {
+    color: #707070;
+    font-size: 15px;
+}
+
+.nav-middle {
+    float: left;
+    margin: 15px 0;
+}
+
+.nav-right {
+    float: right;
+    margin: 15px  0;
+}
+
+.nav-middle a {
+    background-color: #FBEB20;
+    margin: 0 10px;
+    padding: 5px 15px;
+    color: #E92E26;
+    font-weight: 500;
+    font-size: 12px;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.nav-middle a:first-of-type {
+    margin: 0;
+}
+
+.nav-middle a:hover {
+    background-color: #E92E26;
+    color: #fbeb20;
+}
+
+.nav-right a {
+    background-color: #fff;
+    margin: 0 10px;
+    padding: 5px 15px;
+    color: #000;
+    font-size: 12px;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.nav-right a:hover {
+    background-color: #fff;
+    color: #20AA6B;
+}
+/* main-nav-area css end here */
+
+
+/* sidemenu-slider-section css start here */
+section.sidemenu-slider-section {
+    margin-top: 165px;
+}
+
+.carousel-item img {
+    border-radius: 5px;
+}
+
+.carousel-indicators li {
+    background-color: #787878;
+    height: 10px;
+    width: 10px;
+    transition: all 0.3s;
+}
+
+.carousel-indicators .active {
+    width: 20px;
+}
+
+.sidemenu-area {
+    background-color: #E8F5E9;
+    padding: 10px 0;
+    border-radius: 5px;
+    border-bottom: 5px solid #20AA6B;
+    border-top: 5px solid #20AA6B;
+    height: 380px;
+    overflow-y: scroll;
+}
+
+.sidemenu-area ul li a .menu-item-text span {
+    color: #707070;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.sidemenu-area ul li a .menu-item-icon-1 {
+    width: 30px;
+}
+
+.sidemenu-area ul li a .menu-item-icon-1 i {
+    color: #000;
+    font-size: 14px;
+}
+
+.sidemenu-area ul li {
+    padding: 5px 15px;
+    transition: 0.3s;
+}
+
+.sidemenu-area ul li:hover {
+    background-color: #20AA6B;
+}
+
+.sidemenu-area ul li:hover .menu-item-text span {
+    color: #fff;
+}
+/* sidemenu-slider-section css end here */
+
+
+/* daily-essentials-section css start here */
+.daily-heading {
+    border-bottom: 3px solid #445268;
+    margin: 15px 0;
+}
+
+.daily-heading h1 {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.daily-image img {
+    border-radius: 3px;
+}
+/* daily-essentials-section css end here */
+
+
+/* product-section css end here */
+section.oil-and-ghee-section {
+    margin: 20px 0;
+}
+
+.section-heading h1 {
+    font-size: 18px;
+    float: left;
+}
+
+.section-heading .heading-link {
+    float: right;
+    color: #445268;
+    transition: 0.3s;
+}
+
+.section-heading .heading-link:hover {
+    color: #20AA6B;
+}
+
+.section-heading {
+    position: relative;
+    z-index: 1;
+}
+
+.section-heading::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -33px;
+    left: 0;
+    background-color: #445268;
+}
+
+.all-products-card {
+    margin: 20px 0;
+}
+
+
+.card-body h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #313d51;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.card-body .price {
+    color: #20aa6b;
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.bars {
+    position: absolute;
+    margin: 5px 10px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    width: 90%;
+}
+  
+/* product-section css end here */
+
+/* footer-section css end here */
+.footer-top {
+    background-color: #445268;
+    padding: 30px 0;
+}
+
+.footer-top h3 {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.customer-services ul li a {
+    color: #fff;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.customer-services ul li a:hover {
+    color: hsla(0,0%,100%,.5);
+}
+
+.meena-click ul li a {
+    color: #fff;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.meena-click ul li a:hover {
+    color: hsla(0,0%,100%,.5);
+}
+
+.contact-area ul li, .contact-area ul li a {
+    color: #fff;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.contact-area ul li a:hover {
+    color: hsla(0,0%,100%,.5);
+}
+
+.contact-area ul li i {
+    margin-right: 5px;
+}
+
+.contact-area ul li {
+    margin-bottom: 5px;
+}
+
+.social-links h5 {
+    color: #c6c6c6;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.download-apps-link h5 {
+    color: #c6c6c6;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.social-links a i {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.social-links {
+    margin-bottom: 20px;
+}
+
+.social-links a i.fab.fa-facebook-f {
+    background-color: #3B5999;
+}
+
+.social-links a i.fab.fa-instagram {
+    background-color: #E4405F;
+}
+
+.social-links a i.fab.fa-linkedin {
+    background-color: #0077B5;
+}
+
+.social-links a i.fab.fa-youtube {
+    background-color: #CD201F;
+}
+
+.app-link {
+    display: flex;
+    flex-direction: row;
+}
+
+.apple-store {
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    background-color: #000;
+    padding: 0px 10px;
+    border-radius: 5px;
+}
+
+.apple-store-icon i {
+    font-size: 30px;
+    padding: 10px;
+}
+
+.apple-store-title span {
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.apple-store:hover span {
+    color: hsla(0,0%,100%,.5);;
+}
+
+.google-play-store {
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    background-color: #93B210;
+    padding: 0px 10px;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+.google-play-store i {
+    font-size: 30px;
+    padding: 10px;
+}
+
+.google-play-store span {
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.google-play-store:hover span {
+    color: hsla(0,0%,100%,.5);;
+}
+
+.footer-bottom {
+    background-color: #313D51;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.copyright h3 {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0;
+}
+/* footer-section css end here */
+
+
+
+/* responsive menu area css start here */
+.mobile-header-area {
+    display: none;
+}
+
+.mobile-header-top {
+    background-color: #445268;
+    padding: 10px 0;
+}
+
+.mobile-header-bottom {
+    background-color: #313D51;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.header-logo img {
+    width: 100px;
+}
+
+.header-logo {
+    text-align: center;
+}
+
+
+
+.mobile-menu button i {
+    color: #fff;
+    margin-top: 13px;
+    font-size: 20px;
+}
+
+.mobile-menu button.uk-button.uk-button-default {
+    border: none;
+}
+
+.uk-offcanvas-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -270px;
+    box-sizing: border-box;
+    width: 270px;
+    padding: 0;
+    background: #fff;
+    overflow-y: auto;
+}
+
+.mobile-menu-header {
+    background-color: #313D51;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+}
+
+.mobile-menu-header img {
+    width: 125px;
+    padding: 15px;
+}
+
+.mobile-menu button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu button:focus {
+    outline : none;
+}
+
+.mobile-menu-content {
+    padding: 20px;
+}
+
+a.single-menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.mobile-menu-content ul li {
+    padding: 5px 0px;
+}
+
+.mobile-menu-content .menu-item-icon-1 {
+    width: 20px;
+}
+
+.mobile-menu-content .menu-item-icon-1 i {
+    font-size: 14px;
+    color: #000;
+}
+
+.mobile-menu-content .menu-item-text span {
+    font-size: 15px;
+    font-weight: 400;
+    color: #707070;
+}
+
+.mobile-menu-content .menu-item-icon-2 i {
+    font-size: 15px;
+    color: #707070;
+}
+
+
+.mobile-menu-content .menu-item-icon-2 {
+    width: 20px;
+}
+
+.mobile-menu-content .menu-item-text {
+    width: 172px;
+}
+
+.mobile-menu-content ul li:hover .menu-item-text span, .mobile-menu-content ul li:hover .menu-item-icon-2 i {
+    color: #20aa6b;
+}
+
+.header-search {
+    text-align: right;
+}
+
+.header-search  button.uk-button.uk-button-default {
+    color: #fff;
+    border: none;
+    font-size: 30px;
+}
+
+.uk-modal-body {
+    padding: 15px;
+    border-radius: 5px;
+    width: auto;
+}
+
+.uk-modal-body .hero-search {
+    margin: 0;
+}
+/* responsive menu area css end here */
+
+/**************************************************************************/
+/*************************** HOME PAGE CSS END HERE ***********************/
+/**************************************************************************/
+
+
+/**************************************************************************/
+/************** LOGIN And Register PAGE CSS START HERE **********************/
+/**************************************************************************/
+section.login-section {
+    background-image: url(./assets/img/background-1.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    max-height: 1200px;
+    padding-top: 170px;
+}
+
+.login-form {
+    background-color: #ffffffe6;
+    margin-bottom: 50px;
+    border-radius: 5px;
+}
+
+.login-heading {
+    padding: 10px 15px;
+}
+
+.login-heading h4 {
+    color: #707070;
+    font-size: 20px;
+}
+
+.login-content {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 0 0 5px 5px;
+}
+
+.form-group label {
+    font-size: 14px;
+}
+
+.form-group label span {
+    color: #ff4d4f;
+    padding-right: 2px;
+}
+
+.checkbox-div .form-check-input {
+    margin: 5px 0 0 0;
+    width: 20px;
+    height: 20px;
+    border-color: #707070 !important;
+}
+
+.checkbox-div .form-check-label {
+    padding-left: 30px;
+}
+
+.checkbox-div a {
+    float: right;
+    color: #20AA6B;
+    font-size: 15px;
+    padding: 6px 0;
+}
+
+.log-registration-btn {
+    text-align: center;
+    font-size: 14px;
+}
+
+.log-registration-btn button {
+    background-color: #F5F5F5;
+    border: 1px solid #7070703d;
+    margin-bottom: 7px;
+    color: #707070c7;
+}
+
+.log-registration-btn a {
+    background-color: transparent;
+    border: 1px solid #7070703d;
+    margin-bottom: 7px;
+    color: #000000ab;
+}
+
+.log-registration-btn a:hover {
+    color: #20aa6b;
+    border: 1px solid #20aa6b;
+}
+
+.log-registration-btn button:hover {
+    color: #000;
+}
+
+.social-btn {
+    text-align: center;
+}
+
+.social-btn a:first-of-type {
+    background-color: #3B5999;
+    color: #fff;
+}
+
+.social-btn a i {
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.social-btn a:last-of-type {
+    background-color: #DD4B39;
+    color: #fff;
+}
+
+.login-form .input-group-append a {
+    background-color: #E9ECEF;
+    border-radius: 0 5px 5px 0;
+    color: #707070;
+}
+
+.form-group small {
+    font-size: 12px;
+    padding: 0 3px;
+}
+
+/**************************************************************************/
+/************** LOGIN And Register PAGE CSS end HERE **********************/
+/**************************************************************************/
+
+
+
+/**************************************************************************/
+/************** BABY PAGE CSS START HERE **********************/
+/**************************************************************************/
+
+section.section-baby {
+    margin-top: 170px;
+    margin-bottom: 50px;
+}
+
+.section-sidebar .single-sidebar h4 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #445268;
+    margin-bottom: 20px;
+}
+
+.section-sidebar .single-sidebar ul li {
+    padding: 5px 0 5px 10px;
+    border: 1px solid #87707038;
+    border-radius: 5px;
+    margin: 5px 0 5px 20px;
+    transition: all 0.3s ease;
+}
+
+.section-sidebar .single-sidebar ul li a {
+    font-size: 15px;
+    color: #877070;
+    transition: all 0.3s ease;
+}
+
+.section-sidebar .single-sidebar ul li:hover {
+    background-color: #d3d3d32e;
+}
+
+.section-sidebar .single-sidebar ul li:hover a {
+    color: #20AA6B;
+}
+
+.section-sidebar .single-sidebar .brands {
+    margin-top: 20px;
+} 
+
+.section-sidebar .single-sidebar .brands ul li {
+    padding-left: 30px;
+    font-size: 15px;
+    color: #877070;
+    transition: all 0.3s ease;
+}
+
+.section-sidebar .single-sidebar .brands ul li:hover {
+    color: #20AA6B;
+}
+
+.section-sidebar .single-sidebar .price {
+    margin-top: 20px;
+}
+
+.section-sidebar .single-sidebar .price-flex {
+    display: flex;
+    margin-left: 20px;
+}
+
+.section-sidebar .single-sidebar .price-flex input {
+    width: 60px;
+    border: 1px solid #d3d3d387;
+    border-radius: 5px;
+    margin: 0 5px;
+    padding: 5px;
+}
+
+.section-sidebar .single-sidebar .price-flex input:focus {
+    outline: none;
+}
+
+.section-sidebar .single-sidebar .price-flex .btn-price {
+    background-color: #20AA6B;
+    color: #fff;
+    font-size: 16px;
+}
+
+.section-sidebar .single-sidebar .price-flex .btn-price:hover {
+    background-color: transparent;
+    color: #20aa6b;
+    border: 1px solid #20aa6b;
+}
+
+.product-area .product-heading h3 {
+    border: 1px solid #87707038;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px;
+}
+
+
+.pagination-area {
+    border: 1px solid #d3d3d36e;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.pagination-area .pagination {
+    justify-content: flex-end;
+}
+
+.pagination-area .pagination .page-link {
+    color: #20aa68;
+}
+
+
+/**************************************************************************/
+/************** BABY PAGE CSS START HERE **********************/
+/**************************************************************************/
+
+
+/**************************************************************************/
+/************** PRODUCT PAGE CSS START HERE **********************/
+/**************************************************************************/
+.product-content p {
+    color: #20AA6B;
+    font-size: 16px;
+}
+
+.product-content form label {
+    color: grey;
+    font-size: 20px;
+}
+
+.product-content .btn {
+    padding: 10px;
+    margin-top: 5px;
+}
+/**************************************************************************/
+/************** PRODUCT PAGE CSS START HERE **********************/
+/**************************************************************************/
