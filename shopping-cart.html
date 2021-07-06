@@ -1,22 +1,3 @@
-<?php
-
-if(isset($_POST["login"]))
-{
-		$user="admin@gmail.com";
-		$password="1234";
-
-		$txtUser=$_POST["txtemail"];
-		$txtPassword=$_POST["txtpassword"];
-
-		if($user==$txtUser && $password==$txtPassword )
-		{
-				print "<script>location='../admin/'</script>";
-		}
-}
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,21 +8,206 @@ if(isset($_POST["login"]))
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- flaticon css -->
-	<link rel="stylesheet" type="text/css" href="../assets/font/flaticon.css">
+	<link rel="stylesheet" type="text/css" href="assets/font/flaticon.css">
 	<!-- Font awesome css -->
-	<link rel="stylesheet" type="text/css" href="../assets/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/all.min.css">
 	<!-- uikit css -->
-	<link rel="stylesheet" type="text/css" href="../assets/css/uikit.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/uikit.min.css">
 	<!-- bootstrap css -->
-	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	<!-- favicon -->
-	<link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
 	<!-- main css -->
-	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<!-- responsive css -->
-	<link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
 
 	<title>Home - MeenaClick</title>
+
+
+	<style>
+		.shopping-cart-heading .card-body {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		.shopping-cart-heading .card-body .btn-card {
+			margin-top: 0;
+		}
+
+		.shopping-cart-heading .card-body h4 {
+			margin-bottom: 0;
+			margin-top: 5px;
+			font-size: 18px;
+		}
+
+		.shopping-cart-items .card .card-header span:first-child {
+			color: #20AA6B;
+			font-weight: 500;
+		}
+
+		.shopping-cart-items .card .card-header span:last-child {
+			float: right;
+			color: rgba(0,0,0,.65);
+			font-size: 14px;
+		}
+
+		.shopping-cart-items .card .card-body {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			border-bottom: 1px solid #DFDFDF;
+		}
+
+		.shopping-cart-items .card .card-body:last-child {
+			border-bottom: none;
+		}
+
+		.shopping-cart-items .card .card-body img {
+			width: 130px;
+		}
+
+		.shopping-cart-items .card .card-body .cart-product-name {
+			align-self: center;
+			flex-basis: 70%;
+		}
+
+		.shopping-cart-items .card .card-body .cart-product-price {
+			align-self: center;
+			color: #20AA6B;
+			text-align: center;
+		}
+
+		.shopping-cart-items .card .card-body .cart-product-price span {
+			margin: 10px 0px;
+			display: inline-block;
+		}
+
+		.shopping-cart-items .card .card-body .cart-product-name span {
+			display: inline-block;
+			margin: 5px 0;
+			font-size: 14px;
+		}
+
+		.shopping-cart-items .card .card-body .cart-product-name h4 {
+			font-size: 16px;
+		}
+
+		.shopping-cart-right .amount-area {
+			background-color: lavender;
+			font-size: 14px;
+		}
+		
+		.shopping-cart-right .amount li span:last-child {
+			float: right;
+		}
+
+		.shopping-cart-right .amount li {
+			margin-bottom: 10px;
+		}
+
+		.shopping-cart-right .total-amount span:last-child {
+			float: right;
+		}
+
+		.shopping-cart-right .total-amount {
+			font-size: 20px;
+			border-top: 1px solid #445268;
+			color: #20AA6B;
+			padding-top: 10px;
+		}
+
+		.shopping-cart-right .payment-method-area ul li {
+			display: inline-block;
+			text-align: center;
+			border: 1px solid #d3d3d3b3;
+			margin: 10px 0px;
+			padding: 10px;
+			border-radius: 5px;
+			transition: all 0.5s ease;
+		}
+
+		.shopping-cart-right .payment-method-area ul li a i {
+			color: #20AA6B;
+		}
+
+		.shopping-cart-right .payment-method-area ul li a h6 {
+			font-size: 12px;
+			font-weight: 600;
+		}
+
+		.shopping-cart-right .payment-method-area ul li:hover {
+			background-color: #20AA6B;
+		}
+
+		.shopping-cart-right .payment-method-area ul li:hover i {
+			color: #fff;
+		}
+
+		.shopping-cart-right .payment-method-area ul li:hover h6 {
+			color: #fff;
+		}
+
+		.delivery-type-area h6 {
+			margin-bottom: 20px;
+		}
+
+		.delivery-type-area ul.nav {
+			background-color: lavender;
+			border-radius: 5px;
+		}
+
+		.delivery-type-area ul.nav li a {
+			padding: 15px 36px;
+		}
+
+		.delivery-type-area ul.nav li a.active {
+			background-color: #20AA6B;
+		}
+
+		.delivery-type-area ul.nav li a {
+			color: #000;
+			font-size: 15px;
+			text-transform: capitalize;
+		}
+
+		.delivery-type-area .address-area ul li {
+			display: flex;
+		}
+
+		.delivery-type-area .address-area ul li .btn-card {
+			margin-top: 0;
+			padding: 5px 10px;
+			font-size: 10px;
+		}
+
+		.delivery-type-area .address-area ul li div {
+			margin: 0px 20px 0 0;
+			color: grey;
+			font-size: 13px;
+		}
+
+		.delivery-type-area .address-area ul li {
+			margin-bottom: 5px;
+		}
+
+		.delivery-date-time .input-group .btn {
+			border-radius: 0px 5px 5px 0px;
+		}
+
+		.delivery-date-time .form-check {
+			font-size: 14px;
+		}
+
+		.pickup-date-time .form-check {
+			font-size: 14px;
+		}
+
+		.pickup-date-time .input-group .btn {
+			border-radius: 0px 5px 5px 0px;
+		}
+	</style>
 
 </head>
 <body>
@@ -53,8 +219,9 @@ if(isset($_POST["login"]))
 					<div class="row">
 						<div class="col-md-2 col-lg-2">
 							<div class="logo">
-								<a href="../index.php">
-									<img src="../assets/img/logo.png" alt="Meena Click">
+								<a href="index.html" class="navbar-brand mt-4">
+									<span class="text-success"><b>E --</b></span>
+									<span class="text-light"><b>COMMERCE</b></span>
 								</a>
 							</div>
 						</div>
@@ -70,7 +237,7 @@ if(isset($_POST["login"]))
 						</div>
 						<div class="col-md-4 col-lg-4">
 							<div class="login-cart-area">
-								<a href="#" class="btn">
+								<a href="login/login.html" class="btn">
 									<div class="login-area">
 										<div class="login-icon">
 											<i class="fas fa-user-circle"></i>
@@ -116,7 +283,7 @@ if(isset($_POST["login"]))
 									<div class="dropdown-nav-content">
 										<ul>
 											<li>
-												<a href="#" class="single-menu">
+												<a href="baby.html" class="single-menu">
 													<div class="menu-item-icon-1">
 														<span><i class="fas fa-baby"></i></span>
 													</div>
@@ -129,7 +296,7 @@ if(isset($_POST["login"]))
 												</a>
 											</li>
 											<li>
-												<a href="#" class="single-menu">
+												<a href="bakery.html" class="single-menu">
 													<div class="menu-item-icon-1">
 														<span><i class="fas fa-birthday-cake"></i></span>
 													</div>
@@ -142,7 +309,7 @@ if(isset($_POST["login"]))
 												</a>
 											</li>
 											<li>
-												<a href="#" class="single-menu">
+												<a href="beauty.html" class="single-menu">
 													<div class="menu-item-icon-1">
 														<span><i class="flaticon-makeup"></i></span>
 													</div>
@@ -322,9 +489,10 @@ if(isset($_POST["login"]))
 									<div id="offcanvas-overlay" uk-offcanvas="overlay: true">
 										<div class="uk-offcanvas-bar">
 											<div class="mobile-menu-header">
-												<a href="#">
-													<img src="../assets/img/logo.png" alt="MeenaClick">
-												</a>
+												<a href="index.html" class="navbar-brand mt-4 ml-2" style="font-size: 14px;">
+													<span class="text-success"><b>E --</b></span>
+													<span class="text-light"><b>COMMERCE</b></span>
+													</a>
 												<button class="uk-offcanvas-close" type="button">
 													<i class="fas fa-times"></i>
 												</button>
@@ -332,7 +500,7 @@ if(isset($_POST["login"]))
 											<div class="mobile-menu-content">
 												<ul>
 													<li>
-														<a href="#" class="single-menu">
+														<a href="baby.html" class="single-menu">
 															<div class="menu-item-icon-1">
 																<span><i class="fas fa-baby"></i></span>
 															</div>
@@ -345,7 +513,7 @@ if(isset($_POST["login"]))
 														</a>
 													</li>
 													<li>
-														<a href="#" class="single-menu">
+														<a href="bakery.html" class="single-menu">
 															<div class="menu-item-icon-1">
 																<span><i class="fas fa-birthday-cake"></i></span>
 															</div>
@@ -358,7 +526,7 @@ if(isset($_POST["login"]))
 														</a>
 													</li>
 													<li>
-														<a href="#" class="single-menu">
+														<a href="beauty.html" class="single-menu">
 															<div class="menu-item-icon-1">
 																<span><i class="flaticon-makeup"></i></span>
 															</div>
@@ -482,8 +650,9 @@ if(isset($_POST["login"]))
 							</div>
 							<div class="col col-sm-4 col-md-4">
 								<div class="header-logo">
-									<a href="../index.php">
-										<img src="../assets/img/logo.png" alt="MeenaClick">
+									<a href="index.html" class="navbar-brand">
+										<span class="text-success"><b>E --</b></span>
+										<span class="text-light"><b>COMMERCE</b></span>
 									</a>
 								</div>
 							</div>
@@ -532,48 +701,325 @@ if(isset($_POST["login"]))
 	</header>
 	<!-- section header area end here -->
 
-	<!-- login section start here -->
-	<section class="login-section">
-		<div class="container-fluid">
-			<div class="row justify-content-center">
-				<div class="col-md-4">
-					<div class="login-form">
-						<form method="POST">
-							<div class="login-heading">
-								<h4>Login</h4>
-							</div>
-							<div class="login-content">
-								<div class="form-group">
-									<label for="email"><span>*</span>Email/Phone</label>
-									<input class="form-control" type="email" name="txtemail"  id="email" placeholder="Enter email/phone">
-								</div>
-								<div class="form-group">
-									<label for="pass"><span>*</span>Password</label>
-									<input class="form-control" type="password" name="txtpassword"  id="pass" placeholder="Enter password">
-								</div>
-								<div class="form-group checkbox-div">
-									<input type="checkbox" class="form-check-input" id="Check1">
-									<label class="form-check-label" for="Check1">Remember me</label>
-									<a href="#">Can't login in?</a>
-								</div>
-								<div class="log-registration-btn">
-									<button type="submit" class="btn btn-block" name="login">Login</button>
-									<p>Don't have an account?</p>
-									<a href="register.php" class="btn btn-block">Register</a>
-									<p>Or, Login with</p>
-								</div>
-								<div class="social-btn">
-									<a href="#" class="btn btn-block"><i class="fab fa-facebook-f"></i>Facebook</a>
-									<a href="#" class="btn btn-block"><i class="fab fa-google"></i>Google</a>
+
+	<!-- main area start here -->
+	<main class="main-area" style="margin-top:200px; margin-bottom: 50px;">
+		<section class="shopping-cart-area">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="shopping-cart-left">
+							<div class="shopping-cart-heading mb-3">
+								<div class="card">
+									<div class="card-body">
+										<div>
+											<h4>Shopping cart (6 Items)</h4>
+										</div>
+										<div>
+											<a href="#" class="btn btn-card">More Shopping</a>
+										</div>
+									</div>
 								</div>
 							</div>
-						</form>
+							<div class="shopping-cart-items">
+								<div class="card">
+									<div class="card-header">
+										<span>Meena Bazar</span>
+										<span>6 Items</span>
+									</div>
+									<div class="card-body">
+										<div class="cart-product-img">
+											<img src="assets/img/oil-3.jpg" alt="oil">
+										</div>
+										<div class="cart-product-name">
+											<h4>Fortune Fortified Rice Bran Oil Pet 5ltr</h4>
+											<span><b>Other</b>:  5ltr</span>
+											<br>
+											<span><b>tk730.00</b></span>
+										</div>
+										<div class="cart-product-price">
+											<div><i class="fas fa-times"></i></div>
+											<span><b>tk730.00</b></span>
+											<br>
+											<input class="form-control" type="number" min="1" max="10" value="1">
+										</div>
+									</div>
+
+									<div class="card-body">
+										<div class="cart-product-img">
+											<img src="assets/img/dairy-4.jpg" alt="oil">
+										</div>
+										<div class="cart-product-name">
+											<h4>Anchor Fortified Full Cream Milk Powder</h4>
+											<span><b>Other</b>:  1kg</span>
+											<br>
+											<span><b>tk630.00</b></span>
+										</div>
+										<div class="cart-product-price">
+											<div><i class="fas fa-times"></i></div>
+											<span><b>tk630.00</b></span>
+											<br>
+											<input class="form-control" type="number" min="1" max="10" value="1">
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="cart-product-img">
+											<img src="assets/img/hygiene-1.jpg" alt="oil">
+										</div>
+										<div class="cart-product-name">
+											<h4>Nivea Dark Spot Reduction Men Face</h4>
+											<span><b>Other</b>:  200gm</span>
+											<br>
+											<span><b>tk250.00</b></span>
+										</div>
+										<div class="cart-product-price">
+											<div><i class="fas fa-times"></i></div>
+											<span><b>tk250.00</b></span>
+											<br>
+											<input class="form-control" type="number" min="1" max="10" value="1">
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="cart-product-img">
+											<img src="assets/img/grocery-1.jpg" alt="oil">
+										</div>
+										<div class="cart-product-name">
+											<h4>Ruchi Barbecue Chanachur 600gm</h4>
+											<span><b>Other</b>:  500gm</span>
+											<br>
+											<span><b>tk100.00</b></span>
+										</div>
+										<div class="cart-product-price">
+											<div><i class="fas fa-times"></i></div>
+											<span><b>tk100.00</b></span>
+											<br>
+											<input class="form-control" type="number" min="1" max="10" value="1">
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="cart-product-img">
+											<img src="assets/img/fresh-4.jpg" alt="oil">
+										</div>
+										<div class="cart-product-name">
+											<h4>Fresh Date Marium (Net Weight ± 50 Gm)</h4>
+											<span><b>Other</b>:  1kg</span>
+											<br>
+											<span><b>tk900.00</b></span>
+										</div>
+										<div class="cart-product-price">
+											<div><i class="fas fa-times"></i></div>
+											<span><b>tk900.00</b></span>
+											<br>
+											<input class="form-control" type="number" min="1" max="10" value="1">
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="cart-product-img">
+											<img src="assets/img/bakery-3.jpg" alt="oil">
+										</div>
+										<div class="cart-product-name">
+											<h4>Dan Cake Chocolate Muffin Cake 50gm</h4>
+											<span><b>Other</b>:  1 Piece</span>
+											<br>
+											<span><b>tk30.00</b></span>
+										</div>
+										<div class="cart-product-price">
+											<div><i class="fas fa-times"></i></div>
+											<span><b>tk30.00</b></span>
+											<br>
+											<input class="form-control" type="number" min="1" max="10" value="1">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="shopping-cart-right">
+							<div class="card bg-light">
+								<div class="card-body m-3 rounded amount-area">
+									<div class="amount">
+										<ul>
+											<li>
+												<span><b>Sub Total Cost (Qnt 6 Items)</b></span>
+												<span>tk2,640.00</span>
+											</li>
+											<li>
+												<span><b>Discount (-)</b></span>
+												<span class="text-success">tk0.00</span>
+											</li>
+											<li>
+												<span><b>Delivery Charge (+)</b></span>
+												<span>tk60.00</span>
+											</li>
+											<li>
+												<span><b>VAT 0% (+)</b></span>
+												<span class="text-danger">tk0.00</span>
+											</li>
+										</ul>
+									</div>
+									<div class="total-amount">
+										<span><b>Total</b></span>
+										<span>tk2,700.00</span>
+									</div>
+								</div>
+								<div class="card-body border-bottom payment-method-area">
+									<h6>Choose Payment Method</h6>
+									<ul>
+										<li>
+											<a href="#">
+												<div><i class="fas fa-hand-holding-usd"></i></div>
+												<h6>Cash on Deliver</h6>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div><i class="fas fa-money-check-alt"></i></div>
+												<h6>Online Payment</h6>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div><i class="fas fa-mobile-alt"></i></div>
+												<h6>Mobile Payment</h6>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div><i class="fas fa-credit-card"></i></div>
+												<h6>Swipe on Delivery</h6>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div><i class="fas fa-hand-holding-usd"></i></div>
+												<h6>Cash on Pickup</h6>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="card-body border-bottom delivery-type-area">
+									<h6>Choose Delivery Type</h6>
+									<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+										<li class="nav-item" role="presentation">
+											<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home Delivery</a>
+										</li>
+										<li class="nav-item" role="presentation">
+											<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Pick Form store</a>
+										</li>
+									</ul>
+									<div class="tab-content" id="pills-tabContent">
+										<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+											<div class="card-body border-bottom address-area">
+												<ul>
+													<li>
+														<div>
+															<span><i class="fas fa-map-marker-alt"></i></span>
+														</div>
+														<div>
+															<span>
+																<ul>
+																	<li>Shipping Address</li>
+																	<li>Select a address or create a new.</li>
+																</ul>
+															</span>
+														</div>
+														<div>
+															<a href="#" class="btn btn-card">Change</a>
+														</div>
+													</li>
+													<li>
+														<div>
+															<span><i class="fas fa-map-marker-alt"></i></span>
+														</div>
+														<div>
+															<ul>
+																<li>Billing Address</li>
+																<li>Select a address or create a new.</li>
+															</ul>
+														</div>
+													</li>
+												</ul>
+											</div>
+											<div class="card-body delivery-date-time">
+												<h6>Choose Delivery Date-Time</h6>
+												<form>
+													<div class="input-group mb-3">
+														<input type="date" class="form-control mr-2">
+														<input type="time" class="form-control">
+													</div>
+													<div class="input-group mb-3">
+														<input type="text" class="form-control" placeholder="Apply your coupon code here">
+														<div class="input-group-prepend">
+																<a href="#" class="btn btn-outline-success">Apply</a>
+														</div>
+													</div>
+													<div class="input-group mb-3">
+														<textarea class="form-control" cols="40" rows="3" placeholder="You can leave note here"></textarea>
+													</div>
+													<div class="form-check">
+														<input type="checkbox" class="form-check-input">
+														<label class="form-check-label">I agree with <span class="text-success">"Terms and Conditions"</span>  & <span class="text-success">"Privacy Policy"</span></label>
+													</div>
+												</form>
+											</div>
+										</div>
+										<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+											<div class="card-body p-0">
+												<form>
+													<div class="form-group">
+														<label class="form-label"><h6 class="m-0">Choose Pickup Store</h6></label>
+														<select class="form-control">
+
+															<option class="text-muted" selected>Select an option</option>
+															<option>Azimpur</option>
+															<option>Minpur 15</option>
+															<option>Chittagong</option>
+															<option>Dhanmondi</option>
+															<option>Mogbazar</option>
+															<option>Uttra</option>
+															<option>Wari</option>
+														</select>
+													</div>
+												</form>
+											</div>
+											<div class="card-body pickup-date-time p-0">
+												<h6>Choose Pickup Date-Time</h6>
+												<form>
+												<div class="input-group mb-3">
+														<input type="date" class="form-control mr-2">
+														<input type="time" class="form-control">
+													</div>
+													<div class="input-group mb-3">
+														<input type="text" class="form-control" placeholder="Apply your coupon code here">
+														<div class="input-group-prepend">
+																<a href="#" class="btn btn-outline-success">Apply</a>
+														</div>
+													</div>
+													<div class="input-group mb-3">
+														<textarea class="form-control" cols="40" rows="3" placeholder="You can leave note here"></textarea>
+													</div>
+													<div class="form-check">
+														<input type="checkbox" class="form-check-input">
+														<label class="form-check-label">I agree with <span class="text-success">"Terms and Conditions"</span>  & <span class="text-success">"Privacy Policy"</span></label>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-btn p-3">
+									<button type="submit" class="btn btn-block btn-card mt-0 p-3">Check Out</button>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	<!-- login section end here -->
+		</section>
+	</main>
+	<!-- main area end here -->
+
 
 	<!-- footer-section area end here -->
 	<footer class="footer">
@@ -592,9 +1038,9 @@ if(isset($_POST["login"]))
 					</div>
 					<div class="col-auto col-sm-6 col-md-6 col-lg-2">
 						<div class="meena-click">
-							<h3>MeenaClick</h3>
+							<h3>E-Commerce</h3>
 							<ul>
-								<li><a href="#">About MeenaClick</a></li>
+								<li><a href="#">About E-Commerce</a></li>
 								<li><a href="#">Shipping and Delivery</a></li>
 								<li><a href="#">Customer Care</a></li>
 								<li><a href="#">Careers</a></li>
@@ -605,10 +1051,10 @@ if(isset($_POST["login"]))
 						<div class="contact-area">
 							<h3>Contact us</h3>
 							<ul>
-								<li>House: 44, Road: 16 (27 Old), Dhanmondi Dhaka - 1209, Bangladesh</li>
-								<li><i class="fas fa-phone"></i> 09678666111</li>
-								<li><i class="fas fa-envelope"></i> care@meenaclick.com</li>
-								<li><a href="#"><i class="fas fa-blog"></i>blog.meenaclick.com</a></li>
+								<li>SBIT, Mizan Road, Feni, Bangladesh</li>
+								<li><i class="fas fa-phone"></i> +88001840241895</li>
+								<li><i class="fas fa-envelope"></i> info@sbit.com.bd</li>
+								<li><a href="#"><i class="fas fa-blog"></i>sbit.com.bd</a></li>
 							</ul>
 						</div>
 					</div>
@@ -658,7 +1104,7 @@ if(isset($_POST["login"]))
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="copyright">
-							<h3>&copy; 2017-2020 Meenaclick.com. All rights reserved.</h3>
+							<h3>&copy; sbit.com.bd All rights reserved.</h3>
 						</div>
 					</div>
 				</div>
@@ -670,15 +1116,15 @@ if(isset($_POST["login"]))
 
 
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="../assets/js/jquery-2.2.4.min.js"></script>
-	<script src="../assets/js/popper.min.js"></script>
-	<script src="../assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery-2.2.4.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
 
 	<!-- uikit js -->
-	<script src="../assets/js/uikit.min.js"></script>
-	<script src="../assets/js/uikit-icons.min.js"></script>
+	<script src="assets/js/uikit.min.js"></script>
+	<script src="assets/js/uikit-icons.min.js"></script>
 	<!-- main js -->
-	<script src="../assets/js/active.js"></script>
+	<script src="assets/js/active.js"></script>
 
 </body>
 </html>

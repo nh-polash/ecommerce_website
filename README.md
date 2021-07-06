@@ -1,1 +1,1 @@
-# ecommerce_website
+# nh-polash-ecommerce-demo
